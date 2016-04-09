@@ -17,19 +17,38 @@
                     </VisualState.StateTriggers>
 
                     <VisualState.Setters>
-                        <Setter Target="myPanel.Orientation" Value="Horizontal"/>
+                        <!--<Setter Target="myPanel.Orientation" Value="Horizontal"/>-->
+                        <Setter Target="GreenRect.(RelativePanel.RightOf)"
+                                Value="BlueRect"/>
+                        <Setter Target="GreenRect.(RelativePanel.AlignRightWithPanel)"
+                                Value="True"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <StackPanel x:Name="myPanel" Orientation="Vertical">
+        <!--<StackPanel x:Name="myPanel" Orientation="Vertical">
             <TextBlock Text="Windows 10 Tutorials: Text block 1. "
                        Style="{ThemeResource BodyTextBlockStyle}"/>
             <TextBlock Text="Windows 10 Tutorials: Text block 2. "
                        Style="{ThemeResource BaseTextBlockStyle}"/>
             <TextBlock Text="Windows 10 Tutorials: Text block 3. "
                        Style="{ThemeResource BaseTextBlockStyle}"/>
-        </StackPanel>
+        </StackPanel>-->
+
+        <RelativePanel BorderBrush="Gray" BorderThickness="10">
+            <Rectangle x:Name="RedRect" Fill="Red" MinHeight="100"
+                       MinWidth="100"/>
+            <Rectangle x:Name="BlueRect" Fill="Blue" MinHeight="100"
+                       MinWidth="100" RelativePanel.RightOf="RedRect"/>
+            <!-- Width is not set no the green and yellow rectangles.
+            It's determined by the RelativePanel properties. -->
+            <Rectangle x:Name="GreenRect" Fill="Green" MinHeight="100"
+                       RelativePanel.Below="BlueRect" RelativePanel.AlignLeftWith="RedRect"
+                       RelativePanel.AlignRightWith="BlueRect"/>
+            <Rectangle Fill="Yellow" MinHeight="100" RelativePanel.Below="GreenRect"
+                       RelativePanel.AlignLeftWith="BlueRect"
+                       RelativePanel.AlignRightWithPanel="True"/>
+        </RelativePanel>
     </Grid>
 </Page>
