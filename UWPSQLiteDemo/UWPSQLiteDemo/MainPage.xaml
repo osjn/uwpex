@@ -8,6 +8,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="Retrieve" Content="Retrieve" HorizontalAlignment="Left"
+                VerticalAlignment="Top" Margin="384,406,0,0"
+                Click="Retrieve_Click"/>
 
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left"
+                VerticalAlignment="Top" Margin="291,406,0,0" Click="Add_Click"/>
+
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left"
+                   TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"
+                   Margin="233,280,0,0" Width="52"/>
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Margin="289,274,0,0" Width="370"/>
+
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left"
+                   TextWrapping="Wrap" Text="Age" VerticalAlignment="Top"
+                   Margin="233,342,0,0" Width="52"/>
+
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Margin="289,336,0,0" Width="191"/>
+
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left"
+                   Margin="290,468,0,0" TextWrapping="Wrap"
+                   VerticalAlignment="Top" Width="324" Height="131"/>
     </Grid>
 </Page>
